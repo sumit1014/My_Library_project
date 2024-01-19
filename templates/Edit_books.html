@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Edit{% endblock %}
+{% block body %}
+<div class="list">
+<table class="table table-light table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Book's Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">No. of books</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in edit_books%}
+    <tr>
+      <td>{{item.book_name}}</td>
+      <td>{{item.author}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.book_num}}</td>
+      <td><a class="btn btn-danger btn-sm mx-1" href="/delete{{item.id}}" role="button">Delete</a>
+      <a class="btn btn-warning btn-sm mx-1" href="{% url 'Library_system:update' item.id %}" role="button">Update</a>
+    </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

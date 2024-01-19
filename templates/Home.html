@@ -1,0 +1,9 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Home page{% endblock %}
+{% block body %}
+<img src="{% static 'images/LIB.jpg' %}" class="back_img" alt="Avatar">
+{% if user.is_authenticated %}
+<div class="centered">Hello,Welcome To Library</div>
+{% endif %}
+{% endblock %}

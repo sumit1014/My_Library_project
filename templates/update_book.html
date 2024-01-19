@@ -1,0 +1,42 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Update Books{% endblock %}
+{% block body %}
+<div class="form_box">
+	<h4 class="text-center">Update information of book</h4><br>
+	<form method="POST" class="row g-1" enctype="multipart/form-data">
+		{% csrf_token %}
+		
+          <div class="col-md-6">
+				<label for="book_name"><b>Book name</b></label>
+			    {{form.book_name}}
+          </div><br>
+		  
+		  
+          <div class="col-md-6">
+				  <label for="Author"><b>Author</b></label>
+			      {{form.author}}
+          </div>
+		  
+          <div class="col-md-12">
+				  <label for="Price"><b>Price</b></label>
+			      {{form.price}}
+          </div>
+		  
+		  
+          <div class="col-md-12">
+				  <label for="Category"><b>Category</b></label>
+				  {{form.category}}
+          </div>
+		   <div class="col-md-12">
+				  <label for="No_Books"><b>No. of Books</b></label>
+			      {{form.book_num}}
+          </div>
+		 
+		  <div class="col-md-12">
+				  <button type="submit" id="button" class="btn btn-success btn-block" style="width:100%">Update</button>
+		  </div>	    
+	</form>
+</div>
+
+{% endblock %}

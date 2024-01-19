@@ -1,0 +1,48 @@
+{% extends 'Base.html' %}
+{% block title %}Signup page{% endblock %}
+{% block body %}
+<!--registration form  -->
+<div class="form_box">
+	<h4 class="text-center">Create Your Account Here</h4><br>
+	<form  action="/signup" method="POST" class="row g-1">
+	{% csrf_token %}
+	
+        <div class="col-md-6">
+			<label for="username"><b>First Name:</b></label>
+			<input type="text" class="form-control" id="input_box" placeholder="Enter Your name" name="fname" Required>
+        </div><br>
+		  
+		<div class="col-md-6">
+			<label for="username"><b>Last Name:</b></label>
+			<input type="text" class="form-control" id="input_box" placeholder="Enter username" name="lname" Required>
+        </div><br>
+		  
+		<div class="col-md-12">
+			<label for="username"><b>Username:</b></label>
+			<input type="text" class="form-control" id="input_box" placeholder="Enter Your name" name="username" Required>
+        </div><br>
+			
+	
+        <div class="col-md-12">
+			<label for="email"><b>Email:</b></label>
+			<input type="email" class="form-control"  id="input_box" placeholder="Enter email" name="email" Required>
+        </div><br>
+			
+	
+        <div class="col-md-6">
+			<label for="password1"><b> Choose a password:</b></label>
+			<input type="password" class="form-control"  id="input_box" placeholder="Enter password" name="pass1" Required>
+        </div>
+ 
+        <div class="col-md-6">
+			<label for="password2"><b>Confirm Password:</b></label>
+			<input type="password" class="form-control"  id="input_box" placeholder="confirm password" name="pass2" Required>
+        </div>
+		  
+		<div class="col-md-12">
+			<button type="submit" class="btn btn-success btn-block" style="width:100%">Sign up</button>
+		</div>
+		 
+      </form>
+</div>
+{% endblock %}

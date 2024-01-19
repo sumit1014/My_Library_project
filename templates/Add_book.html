@@ -1,0 +1,41 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Add Books{% endblock %}
+{% block body %}
+<div class="form_box">
+	<h4 class="text-center">Add New Books Here</h4><br>
+	<form method="POST" class="row g-1" action="{% url 'Library_system:add_book' %}">
+		{% csrf_token %}
+		
+          <div class="col-md-6">
+				<label for="book_name"><b>Book name</b></label>
+			    <input type="text" class="form-control" id="input_box" name="book_name" Required>
+          </div><br>
+		  
+		 
+          <div class="col-md-6">
+				  <label for="Author"><b>Author</b></label>
+			      <input type="text" class="form-control"  id="input_box" name="author" Required>
+          </div>
+		  
+          <div class="col-md-12">
+				  <label for="Price"><b>Price</b></label>
+			      <input type="number" class="form-control"  id="input_box" name="price" Required>
+          </div>
+		  
+		   
+          <div class="col-md-12">
+				  <label for="Category"><b>Category</b></label>
+			      <input type="text" class="form-control"  id="input_box"  name="category" Required>
+          </div>
+		   <div class="col-md-12">
+				  <label for="No_Books"><b>No. of Books</b></label>
+			      <input type="number" class="form-control"  id="input_box"  name="book_num" Required>
+          </div>
+		 
+		  <div class="col-md-12">
+				  <button type="submit" id="button" class="btn btn-success btn-block" style="width:100%">Add Book</button>
+		  </div>	    
+	</form>
+</div>
+{% endblock %}
